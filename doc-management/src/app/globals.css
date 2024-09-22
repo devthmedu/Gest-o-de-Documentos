@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .btn-custom {
+    @apply bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300 ease-in-out;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-gray-600 transition duration-300 ease-in-out;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-red-600 transition duration-300 ease-in-out;
+  }
+
+  .btn-success {
+    @apply bg-green-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-green-600 transition duration-300 ease-in-out;
+  }
+
+  .btn-outline {
+    @apply border-2 border-blue-500 text-blue-500 font-semibold py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out;
+  }
+
+  .btn-icon {
+    @apply flex items-center space-x-2;
+  }
+
+  .btn-icon svg {
+    @apply w-5 h-5;
+  }
+
+  .card {
+    @apply bg-white shadow-md rounded-lg p-4;
+  }
+
+  .card-header {
+    @apply font-bold text-xl mb-4;
+  }
+
+  .card-body {
+    @apply mb-4;
+  }
+
+  .card-footer {
+    @apply flex justify-between;
+  }
+}
